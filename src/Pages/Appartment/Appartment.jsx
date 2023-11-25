@@ -1,9 +1,11 @@
+import ApartmentsCards from "./ApartmentsCards";
 
 
 const Appartment = () => {
+    
     return (
         <div>
-            Appartment
+            <ApartmentsCards></ApartmentsCards>
         </div>
     );
 };

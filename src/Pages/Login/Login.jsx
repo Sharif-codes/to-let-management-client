@@ -4,6 +4,7 @@ import useAuth from '../../hooks/useAuth'
 // import { getToken, saveUser } from '../../api/auth'
 import toast from 'react-hot-toast'
 import { ImSpinner3 } from "react-icons/im";
+import { getToken } from '../../api/auth';
 
 const Login = () => {
   const navigate = useNavigate()
@@ -25,7 +26,7 @@ const Login = () => {
       console.log(result);
 
       //get token
-    //   await getToken(result?.user?.email)
+      await getToken(result?.user?.email)
       toast.success('Successfully login')
       navigate(from,{replace:true})
     }
@@ -41,7 +42,7 @@ const Login = () => {
         console.log(result);
         // saveUser(result?.user)
         //get token
-        // getToken(result?.user?.email)
+        getToken(result?.user?.email)
         toast.success('Registration successful')
       navigate(from, {replace:true})
       console.log(loading);
