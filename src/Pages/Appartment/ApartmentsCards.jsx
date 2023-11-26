@@ -7,19 +7,22 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const ApartmentsCards = ({apartmentData}) => {
-    const {apartment,block,floor,image,rent}=apartmentData
+    const {apartment,block,floor,image,rent,room,si}=apartmentData
     const axiosSecure= useAxiosSecure()
     const {user}= useAuth()
 
     const handleAgreement= ()=>{
         const agreementData= {
+            si,
             user_name: user.displayName,
             user_email: user.email,
             floor: floor,
             block: block,
             apartment: apartment,
             rent: rent,
-            status: 'pending'
+            status: 'pending',
+            room,
+            timestamp: Date.now()
         }
         Swal.fire({
             title: "Are you sure?",
@@ -43,9 +46,6 @@ const ApartmentsCards = ({apartmentData}) => {
            
             }
           });
-
-
-       
     }
     return (
        <div className="mt-10 mx-auto">

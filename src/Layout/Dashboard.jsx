@@ -1,10 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaBook, FaCalendar, FaEnvelope, FaFonticons, FaHome, FaList, FaSoundcloud, FaSpeakap, FaSpeakerDeck, FaUser, FaUserFriends, FaUtensils }
+import { FaBook, FaHome, FaList, FaUser, FaUserFriends }
     from "react-icons/fa";
 import { TbSpeakerphone } from "react-icons/tb";
 import { IoCardSharp } from "react-icons/io5";
 import useAdmin from "../hooks/useAdmin";
-import Section from "../Shared/Section/Section";
 import useMember from "../hooks/useMember";
 
 const Dashboard = () => {
@@ -18,6 +17,7 @@ const Dashboard = () => {
                 <ul className="menu p-4">
                     {isAdmin ?
                         <>
+                         <p className="text-2xl my-5 font-semibold border-2 p-2 rounded-xl">Admin Dashboard</p>
                             <li>
                                 <NavLink to='/dashboard/adminProfile' >
                                     <FaUser></FaUser>
@@ -47,6 +47,7 @@ const Dashboard = () => {
                             </li>
                         </> : isMember?
                         <>
+                         <p className="text-2xl my-5 font-semibold border-2 p-2 rounded-xl">Member Dashboard</p>
                          <li>
                                 <NavLink to="/dashboard/memberProfile">
                                     <FaUser></FaUser>
@@ -56,7 +57,7 @@ const Dashboard = () => {
                         
                         </>:
                         <>
-                            <p className="text-3xl my-5">User Dashboard</p>
+                            <p className="text-2xl my-5 font-semibold border-2 p-2 rounded-xl">User Dashboard</p>
                             <li>
                                 <NavLink to="/dashboard/userProfile">
                                     <FaUser></FaUser>

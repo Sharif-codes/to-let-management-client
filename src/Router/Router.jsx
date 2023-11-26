@@ -12,6 +12,8 @@ import Adminprofile from "../Pages/Dashboard/AdminProfile/Adminprofile";
 import AdminRoute from "./AdminRoute";
 import MemberProfile from "../Pages/Dashboard/MemberProfile/MemberProfile";
 import MemberRoute from "./MemberRoute";
+import ManageMember from "../Pages/Dashboard/ManageMember/ManageMember";
+import AgreementRequest from "../Pages/Dashboard/AgreementRequest/AgreementRequest";
 
 export const router= createBrowserRouter([
     {
@@ -52,6 +54,15 @@ export const router= createBrowserRouter([
             {
                 path:"adminProfile",
                 element: <AdminRoute><Adminprofile></Adminprofile></AdminRoute>
+
+            },
+            {
+                path: "manageMember",
+                element: <AdminRoute><ManageMember></ManageMember></AdminRoute>
+            },
+            {
+                path: "agreementRequest",
+                element: <AdminRoute><AgreementRequest></AgreementRequest></AdminRoute>
 
             },
             //member route

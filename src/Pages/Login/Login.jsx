@@ -41,7 +41,7 @@ const Login = () => {
       signInWithGoogle()
       .then(result=>{
         console.log(result);
-        saveUser(result?.user)
+        saveUser(result?.user, result?.user?.displayName)
         //get token
         // getToken(result?.user?.email)
         toast.success('Registration successful')

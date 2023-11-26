@@ -6,7 +6,8 @@
       "block": "A",
       "apartment": "101",
       "rent": 12000,
-      "status": "available"
+      "status": "available",
+      "room": "A1"
     },
     {
       "si":2,
@@ -15,7 +16,8 @@
       "block": "B",
       "apartment": "205",
       "rent": 15000,
-      "status": "available"
+      "status": "available",
+      "room": "B1"
     },
     {
       "si":3,
@@ -24,7 +26,8 @@
       "block": "C",
       "apartment": "302",
       "rent": 11000,
-      "status": "available"
+      "status": "available",
+      "room": "C1"
     },
     {
       "si":4,
@@ -33,7 +36,8 @@
       "block": "D",
       "apartment": "601",
       "rent": 18000,
-      "status": "available"
+      "status": "available",
+      "room": "D1"
     },
     {
       "si":5,
@@ -42,7 +46,8 @@
       "block": "A",
       "apartment": "402",
       "rent": 14000,
-      "status": "available"
+      "status": "available",
+      "room": "A2"
     },
     {
       "si":6,
@@ -51,7 +56,8 @@
       "block": "B",
       "apartment": "102",
       "rent": 10000,
-      "status": "available"
+      "status": "available",
+      "room": "B2"
     },
     {
       "si":7,
@@ -60,7 +66,8 @@
       "block": "C",
       "apartment": "701",
       "rent": 20000,
-      "status": "available"
+      "status": "available",
+      "room": "C2"
     },
     {
       "si":8,
@@ -69,7 +76,8 @@
       "block": "D",
       "apartment": "203",
       "rent": 13000,
-      "status": "available"
+      "status": "available",
+      "room": "D1"
     },
     {
       "si":9,
@@ -78,7 +86,8 @@
       "block": "A",
       "apartment": "404",
       "rent": 16000,
-      "status": "available"
+      "status": "available",
+      "room": "A3"
     },
     {
       "si":10,
@@ -87,7 +96,8 @@
       "block": "B",
       "apartment": "301",
       "rent": 17000,
-      "status": "available"
+      "status": "available",
+      "room": "B3"
     },
     {
       "si":11,
@@ -96,7 +106,8 @@
       "block": "E",
       "apartment": "104",
       "rent": 19000,
-      "status": "available"
+      "status": "available",
+      "room": "E1"
     },
     {
       "si":12,
@@ -105,7 +116,8 @@
       "block": "C",
       "apartment": "204",
       "rent": 20000,
-      "status": "available"
+      "status": "available",
+      "room": "C4"
     },
     {
       "si":13,
@@ -114,24 +126,27 @@
       "block": "A",
       "apartment": "304",
       "rent": 21000,
-      "status": "available"
+      "status": "available",
+      "room": "A4"
     },
     {
       "si":14,
       "image": "https://i.ibb.co/sKXMQnZ/new4.jpg",
       "floor": 4,
-      "block": "A",
+      "block": "B",
       "apartment": "404",
       "rent": 16000,
-      "status": "available"
+      "status": "available",
+      "room": "B5"
     },
     {
       "si":15,
       "image": "https://i.ibb.co/C1q04dw/new5.jpg",
       "floor": 5,
-      "block": "A",
+      "block": "C",
       "apartment": "504",
       "rent": 15000,
-      "status": "available"
+      "status": "available",
+      "room": "C5"
     }
   ]

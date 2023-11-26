@@ -11,7 +11,7 @@ import { ImSpinner3 } from 'react-icons/im'
 const SignUp = () => {
 
   const navigate = useNavigate()
-  const { createUser, updateUserProfile, signInWithGoogle, loading } = useAuth()
+  const { createUser, updateUserProfile, signInWithGoogle, loading,user } = useAuth()
   const location= useLocation()
   const from= location?.state?.from?.pathname || "/";
 
@@ -33,7 +33,7 @@ const SignUp = () => {
       updateUserProfile(name, imageData?.data?.display_url)
       console.log(result)
       // save user in database
-      const dbResponse = await saveUser(result?.user)
+      const dbResponse = await saveUser(result?.user,name)
       console.log(dbResponse);
       // get token
       // await getToken(result?.user?.email)
@@ -51,7 +51,7 @@ const SignUp = () => {
       signInWithGoogle()
         .then(result => {
           console.log(result.user);
-          saveUser(result?.user)
+          saveUser(result?.user, result?.user?.displayName)
           //get token
           // getToken(result?.user?.email)
           toast.success('Successfullly Registered with google')
