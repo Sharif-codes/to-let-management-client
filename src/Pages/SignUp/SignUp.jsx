@@ -1,14 +1,20 @@
 
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
 import toast from 'react-hot-toast'
 import { imgUpload } from '../../api/utils'
 import useAuth from '../../hooks/useAuth'
+// import useSaveUser from '../../hooks/useSaveUser'
+import { saveUser } from '../../api/auth'
+import { ImSpinner3 } from 'react-icons/im'
 
 const SignUp = () => {
+
   const navigate = useNavigate()
   const { createUser, updateUserProfile, signInWithGoogle, loading } = useAuth()
-  // const { createUser, updateUserProfile, signInWithGoogle, loading } = useAuth()
+  const location= useLocation()
+  const from= location?.state?.from?.pathname || "/";
+
   const handleSignUp = async e => {
     e.preventDefault()
     const form = e.target
@@ -26,17 +32,13 @@ const SignUp = () => {
       const result = await createUser(email, password)
       updateUserProfile(name, imageData?.data?.display_url)
       console.log(result)
-      navigate('/')
-      // update user
-
-
-
-      //save user in database
-      // const dbResponse = await saveUser(result?.user)
-      // console.log(dbResponse);
-      //get token
+      // save user in database
+      const dbResponse = await saveUser(result?.user)
+      console.log(dbResponse);
+      // get token
       // await getToken(result?.user?.email)
-      // toast.success('Regestration successful')
+      toast.success('Registration successful')
+      navigate(from,{replace:true})
 
     }
     catch (error) {
@@ -49,11 +51,11 @@ const SignUp = () => {
       signInWithGoogle()
         .then(result => {
           console.log(result.user);
-          // saveUser(result?.user)
+          saveUser(result?.user)
           //get token
           // getToken(result?.user?.email)
-          toast.success('Google Registration successful')
-          navigate('/')
+          toast.success('Successfullly Registered with google')
+          navigate(from,{replace:true})
           console.log(loading);
         })
     }
@@ -139,7 +141,7 @@ const SignUp = () => {
               type='submit'
               className='bg-info w-full rounded-md py-3 text-white'
             >
-              Continue
+               {loading ? (<ImSpinner3 className='animate-spin m-auto'></ImSpinner3>) : ("Continue")}
             </button>
           </div>
         </form>

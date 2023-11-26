@@ -36,16 +36,16 @@ const Navbar = () => {
                     user ? <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+                                <img alt={user.displayName} src={user.photoURL} />
                             </div>
                         </label>
                         <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                            <li className="font-lg text-info justify-center">
-
-                                {user.displayName}
-
+                            <li className="font-lg ml-3 text-info justify-center">
+                           {user.displayName}
                             </li>
-                            <li><a>Dashboard</a></li>
+                            <hr />
+                            
+                            <Link to="/dashboard"><li><a>Dashboard</a></li></Link>
                             <li onClick={logOut}><a>Logout</a></li>
                         </ul>
                     </div> : <Link to="/login"><button className="btn btn-neutral">Login<MdLogin></MdLogin></button></Link>

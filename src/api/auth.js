@@ -1,13 +1,11 @@
-import axiosSecure from ".";
+import axios from "axios";
 
-export const getToken= async email=>{
-    const {data}= await axiosSecure.post('/jwt', email)
-    console.log('token recieved form server',data);
+export const saveUser= async user =>{
+
+    const currentUser= {
+        email: user.email,
+        role: 'user',
+    }
+    const {data}= await axios.put(`http://localhost:5000/users/${user.email}`, currentUser)
     return data;
-}
-// clear cookie
-export const clearCookie = async () =>{
-    const {data}= await axiosSecure.get('/logout')
-    console.log('token recieved form server',data);
-    return data;
-}
+} 
