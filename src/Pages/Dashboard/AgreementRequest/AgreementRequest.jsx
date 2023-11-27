@@ -4,7 +4,7 @@ import AgreementRequestTable from "./AgreementRequestTable";
 
 const AgreementRequest = () => {
     const axiosSecure = useAxiosSecure()
-    const { data: agreement = [] } = useQuery({
+    const { data: agreement = [], refetch } = useQuery({
         queryKey: ["agreement",],
         queryFn: async () => {
             const res = await axiosSecure.get("/agreement");
@@ -30,7 +30,7 @@ const AgreementRequest = () => {
                 </thead>
                 <tbody>
                     {
-                        agreement.map((item,idx) =><AgreementRequestTable key={idx} serial={idx} agreementReq={item}></AgreementRequestTable>)
+                        agreement.map((item,idx) =><AgreementRequestTable refetch={refetch} key={idx} serial={idx} agreementReq={item}></AgreementRequestTable>)
                     }
                 </tbody>
             </table>

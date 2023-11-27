@@ -5,10 +5,12 @@ import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAdmin from "../../hooks/useAdmin";
 
 const ApartmentsCards = ({apartmentData}) => {
-    const {apartment,block,floor,image,rent,room,si}=apartmentData
+    const {apartment,block,floor,image,rent,room,si,status}=apartmentData
     const axiosSecure= useAxiosSecure()
+    const [isAdmin] = useAdmin()
     const {user}= useAuth()
 
     const handleAgreement= ()=>{
@@ -56,7 +58,7 @@ const ApartmentsCards = ({apartmentData}) => {
                 <p>Block-{block}, Floor-{floor}</p>
                 <p>Rent Price: ৳{rent}</p>
                 <div className="card-actions justify-end">
-                    <button onClick={handleAgreement} disabled={!user} className="btn btn-primary">Agreement</button>
+                    <button onClick={handleAgreement} disabled={!user || status=="booked" || isAdmin } className="btn btn-primary">Agreement</button>
                 </div>
             </div>
         </div>

@@ -7,8 +7,8 @@ const AdminStats = () => {
     const availableRooms = data?.available
     const bookedRooms= data?.booked
 
-    const availableRoomsPercentage= parseFloat(((totalRoom - bookedRooms)/totalRoom)*100)
-    const bookedRoomPercentage= parseFloat(((totalRoom - availableRooms)/totalRoom)*100)
+    const availableRoomsPercentage= parseFloat(((totalRoom - bookedRooms)/totalRoom)*100).toFixed(2)
+    const bookedRoomPercentage= parseFloat(((totalRoom - availableRooms)/totalRoom)*100).toFixed(2)
     const totalUser= data?.user
     const totalMember= data?.member
     return (
