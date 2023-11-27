@@ -1,13 +1,16 @@
+import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
-const Coupons = () => {
+const Coupons = ({ coupon }) => {
+
+
     return (
-        <div className="card w-72 bg-primary text-primary-content animate-pulse">
+        <div key={coupon._id} className="card w-72 bg-primary text-primary-content animate-pulse">
             <div className="card-body">
-                <h2 className="card-title">15% Discount</h2>
-                <p> Description- If a dog chews shoes whose shoes does he choose?</p>
+                <h2 className="card-title">{coupon.discount}% Discount</h2>
+                <p> {coupon.description}</p>
                 <div className="card-actions flex items-center">
-                    <div>Code: <span className="text-red-500">GUL01</span></div>
-                    <button className="btn">Buy Now</button>
+                    <div>Code: <span className="text-red-500">{coupon.code}</span></div>
                 </div>
             </div>
         </div>

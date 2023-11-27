@@ -14,6 +14,9 @@ import MemberProfile from "../Pages/Dashboard/MemberProfile/MemberProfile";
 import MemberRoute from "./MemberRoute";
 import ManageMember from "../Pages/Dashboard/ManageMember/ManageMember";
 import AgreementRequest from "../Pages/Dashboard/AgreementRequest/AgreementRequest";
+import MemberPayment from "../Pages/Dashboard/MemberPayment/MemberPayment";
+import PaymentGateway from "../Pages/PaymentGateway/PaymentGateway";
+import CouponManagement from "../Pages/Dashboard/CouponManagement/CouponManagement";
 
 export const router= createBrowserRouter([
     {
@@ -65,10 +68,22 @@ export const router= createBrowserRouter([
                 element: <AdminRoute><AgreementRequest></AgreementRequest></AdminRoute>
 
             },
+            {
+                path:"manageCoupon",
+                element: <AdminRoute><CouponManagement></CouponManagement></AdminRoute>
+            },
             //member route
             {
                 path: "memberProfile",
                 element: <MemberRoute><MemberProfile></MemberProfile></MemberRoute>
+            },
+            {
+                path: "memberPayment",
+                element: <MemberRoute><MemberPayment></MemberPayment></MemberRoute>
+            },
+            {
+                path: "payment",
+                element: <MemberRoute><PaymentGateway></PaymentGateway></MemberRoute>
             }
         ]
     }

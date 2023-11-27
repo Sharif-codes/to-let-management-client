@@ -1,23 +1,23 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaBook, FaHome, FaList, FaUser, FaUserFriends }
+import { FaBook, FaDollarSign, FaHistory, FaHome, FaList, FaPaypal, FaSignOutAlt, FaUser, FaUserFriends }
     from "react-icons/fa";
 import { TbSpeakerphone } from "react-icons/tb";
 import { IoCardSharp } from "react-icons/io5";
 import useAdmin from "../hooks/useAdmin";
 import useMember from "../hooks/useMember";
+import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
+    const { logOut } = useAuth()
     const [isAdmin] = useAdmin()
-    const [isMember]= useMember()
-    console.log("is admin", isAdmin);
-    console.log("is member", isMember);
+    const [isMember] = useMember()
     return (
         <div className="flex">
             <div className="w-64 min-h-screen bg-info">
                 <ul className="menu p-4">
                     {isAdmin ?
                         <>
-                         <p className="text-2xl my-5 font-semibold border-2 p-2 rounded-xl">Admin Dashboard</p>
+                            <p className="text-2xl my-5 font-semibold border-2 p-2 rounded-xl">Admin Dashboard</p>
                             <li>
                                 <NavLink to='/dashboard/adminProfile' >
                                     <FaUser></FaUser>
@@ -41,40 +41,49 @@ const Dashboard = () => {
                             </li>
                             <li>
                                 <NavLink to='/dashboard/manageCoupon' >
-                                <IoCardSharp />
+                                    <IoCardSharp />
                                     Manage Coupons
                                 </NavLink>
                             </li>
-                        </> : isMember?
-                        <>
-                         <p className="text-2xl my-5 font-semibold border-2 p-2 rounded-xl">Member Dashboard</p>
-                         <li>
-                                <NavLink to="/dashboard/memberProfile">
-                                    <FaUser></FaUser>
-                                    My Profile</NavLink>
-                            </li>
-                        
-                        
-                        </>:
-                        <>
-                            <p className="text-2xl my-5 font-semibold border-2 p-2 rounded-xl">User Dashboard</p>
-                            <li>
-                                <NavLink to="/dashboard/userProfile">
-                                    <FaUser></FaUser>
-                                    My Profile</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/anouncement" >
-                                    <FaList></FaList>
-                                    Anouncements</NavLink>
-                            </li>
-                        </>}
+                        </> : isMember ?
+                            <>
+                                <p className="text-xl my-5 font-semibold border-2 p-2 rounded-xl">Member Dashboard</p>
+                                <li>
+                                    <NavLink to="/dashboard/memberProfile">
+                                        <FaUser></FaUser>
+                                        My Profile</NavLink>
+                                    <NavLink to="/dashboard/memberPayment">
+                                        <FaDollarSign></FaDollarSign>
+                                        Make Payment</NavLink>
+                                    <NavLink to="/dashboard/paymentHistory">
+                                        <FaHistory></FaHistory>
+                                        Payment History</NavLink>
+                                </li>
+
+
+                            </> :
+                            <>
+                                <p className="text-2xl my-5 font-semibold border-2 p-2 rounded-xl">User Dashboard</p>
+                                <li>
+                                    <NavLink to="/dashboard/userProfile">
+                                        <FaUser></FaUser>
+                                        My Profile</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/dashboard/anouncement" >
+                                        <FaList></FaList>
+                                        Anouncements</NavLink>
+                                </li>
+                            </>}
 
                     <div className="divider"></div>
                     <li>
                         <NavLink to="/" >
                             <FaHome></FaHome>
                             Home</NavLink>
+                        <NavLink to="/login" onClick={logOut} >
+                            <FaSignOutAlt></FaSignOutAlt>
+                            Logout</NavLink>
                     </li>
 
                 </ul>

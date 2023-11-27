@@ -1,10 +1,21 @@
+import { useQuery } from "@tanstack/react-query";
 import Footer from "../../Shared/Footer/Footer";
 import Section from "../../Shared/Section/Section";
 import Coupons from "../../component/Coupons/Coupons";
 import Banner from "../../component/banner/Banner";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Location from "./Location";
 
 const Home = () => {
+    const axiosSecure = useAxiosSecure()
+    const { data } = useQuery({
+        queryKey: ["couponAvailable"],
+        queryFn: async () => {
+            const res = await axiosSecure.get('/couponAvailable')
+            return res.data
+        }
+    })
+    console.log(data);
     return (
         <div>
             <section data-aos="zoom-out-down"><Banner></Banner></section>
@@ -23,7 +34,9 @@ const Home = () => {
             <section className="my-10">
                 <Section title="Coupons"></Section>
                 <div className="w-3/4 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-2 lg:gap-3">
-                    <Coupons></Coupons>
+                    {
+                        data?.map(item=><Coupons key={item._id} coupon={item}></Coupons>)
+                    }
                 </div>
             </section>
           

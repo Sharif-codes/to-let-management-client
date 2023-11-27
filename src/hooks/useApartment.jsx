@@ -13,8 +13,6 @@ const useApartment = () => {
             return res.data;
         },
     });
-
-    // Check if the data is still loading or if there's an error
     if (isLoading) {
         return <p>Loading...</p>;
     }
@@ -22,8 +20,6 @@ const useApartment = () => {
     if (isError) {
         return <p>Error loading data</p>;
     }
-
-    // Check if data exists and has the expected structure
     if (!data || !data.total) {
         return <p>Data is missing or has an unexpected structure</p>;
     }

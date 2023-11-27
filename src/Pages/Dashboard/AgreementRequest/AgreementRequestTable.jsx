@@ -15,7 +15,7 @@ const AgreementRequestTable = ({ agreementReq, serial, refetch }) => {
     const formattedDate = `${day}/${month}/${year}`;
     console.log(formattedDate);
     const handleAcceptAgreement = async (si, email) => {
-        const res = await axiosSecure.patch(`/acceptAgreement`, { si, email })
+        const res = await axiosSecure.put(`/acceptAgreement`, { si, email })
         console.log(res?.data)
         toast.success('Request accepted!')
         refetch()
