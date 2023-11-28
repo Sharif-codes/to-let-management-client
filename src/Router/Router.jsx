@@ -17,11 +17,14 @@ import AgreementRequest from "../Pages/Dashboard/AgreementRequest/AgreementReque
 import MemberPayment from "../Pages/Dashboard/MemberPayment/MemberPayment";
 import PaymentGateway from "../Pages/PaymentGateway/PaymentGateway";
 import CouponManagement from "../Pages/Dashboard/CouponManagement/CouponManagement";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 
 export const router= createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -84,6 +87,10 @@ export const router= createBrowserRouter([
             {
                 path: "payment",
                 element: <MemberRoute><PaymentGateway></PaymentGateway></MemberRoute>
+            },
+            {
+                path: "paymentHistory",
+                element: <MemberRoute><PaymentHistory></PaymentHistory></MemberRoute>
             }
         ]
     }
