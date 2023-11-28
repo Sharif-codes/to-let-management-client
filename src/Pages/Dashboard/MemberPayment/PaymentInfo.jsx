@@ -43,7 +43,7 @@ const PaymentInfo = ({ info }) => {
                 <Link
                     to='/dashboard/payment' state={paymentDescription}
                 >
-                    <button className="btn btn-primary">
+                    <button className="btn btn-primary mt-3">
                         <FaWallet></FaWallet> Pay
                     </button>
                 </Link>

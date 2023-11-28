@@ -1,20 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
 import Footer from "../../Shared/Footer/Footer";
 import Section from "../../Shared/Section/Section";
 import Coupons from "../../component/Coupons/Coupons";
 import Banner from "../../component/banner/Banner";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Location from "./Location";
+import useAvailableCoupon from "../../hooks/useAvailableCoupon";
 
 const Home = () => {
-    const axiosSecure = useAxiosSecure()
-    const { data } = useQuery({
-        queryKey: ["couponAvailable"],
-        queryFn: async () => {
-            const res = await axiosSecure.get('/couponAvailable')
-            return res.data
-        }
-    })
+    const data= useAvailableCoupon()
     console.log(data);
     return (
         <div>

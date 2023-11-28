@@ -5,12 +5,14 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import useAxiosPublic from "../../hooks/usAxiosPublic";
+import useAdmin from "../../hooks/useAdmin";
 
 
 const Appartment = () => {
   const [page, setPage] = useState(0);
   const axiosPublic = useAxiosPublic();
   const {user}= useAuth()
+  const [isAdmin] = useAdmin()
 
   const { data } = useQuery({
     queryKey: ["apartment", page],
@@ -31,6 +33,10 @@ const Appartment = () => {
   if(!user)
     {
         toast.error('Please Login to enable Agreement')
+    }
+    if(isAdmin)
+    {
+      toast.error("Admin is not allowed to agreement!")
     }
   return (
     <div>

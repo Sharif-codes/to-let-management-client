@@ -58,7 +58,7 @@ const ApartmentsCards = ({apartmentData}) => {
                 <p>Block-{block}, Floor-{floor}</p>
                 <p>Rent Price: ৳{rent}</p>
                 <div className="card-actions justify-end">
-                    <button onClick={handleAgreement} disabled={!user || status=="booked" || isAdmin } className="btn btn-primary">Agreement</button>
+                    <button onClick={handleAgreement} disabled={!user || status=="booked" || isAdmin } className="btn btn-primary">{status=="booked"?"Booked": "Agreement"}</button>
                 </div>
             </div>
         </div>
