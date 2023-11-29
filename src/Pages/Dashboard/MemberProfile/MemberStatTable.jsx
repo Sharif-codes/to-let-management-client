@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const MemberStatTable = ({memberRoom,index}) => {
     const date = new Date(memberRoom.accept_date);

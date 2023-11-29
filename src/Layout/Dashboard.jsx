@@ -1,16 +1,20 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaBook, FaDollarSign, FaHistory, FaHome, FaList, FaPaypal, FaSignOutAlt, FaUser, FaUserFriends }
+import { FaBook, FaDollarSign, FaHistory, FaHome, FaList, FaPaypal, FaSignOutAlt, FaSpeakap, FaUser, FaUserFriends }
     from "react-icons/fa";
 import { TbSpeakerphone } from "react-icons/tb";
 import { IoCardSharp } from "react-icons/io5";
 import useAdmin from "../hooks/useAdmin";
 import useMember from "../hooks/useMember";
 import useAuth from "../hooks/useAuth";
+import useAnouncement from "../hooks/useAnouncement";
 
 const Dashboard = () => {
+    const anouncement = useAnouncement()
     const { logOut } = useAuth()
     const [isAdmin] = useAdmin()
     const [isMember] = useMember()
+    console.log("is Admin:", isAdmin);
+    console.log("is member", isMember);
     return (
         <div className="flex">
             <div className="w-64 min-h-screen bg-info">
@@ -58,6 +62,10 @@ const Dashboard = () => {
                                     <NavLink to="/dashboard/paymentHistory">
                                         <FaHistory></FaHistory>
                                         Payment History</NavLink>
+                                    <NavLink to="/dashboard/anouncements">
+                                    <TbSpeakerphone />
+                                            Anouncements({anouncement?.length})
+                                    </NavLink>
                                 </li>
 
 
@@ -72,7 +80,7 @@ const Dashboard = () => {
                                 <li>
                                     <NavLink to="/dashboard/anouncement" >
                                         <FaList></FaList>
-                                        Anouncements</NavLink>
+                                        Anouncements{anouncement?.length}</NavLink>
                                 </li>
                             </>}
 

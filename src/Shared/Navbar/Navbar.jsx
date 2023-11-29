@@ -8,8 +8,10 @@ const Navbar = () => {
     return (
         <div className="navbar w-full bg-info bg-opacity-20 max-w-screen-xl">
 
-            <div className="flex-1">
-                <a className="btn btn-ghost text-xl">Gulshan <span className="text-info">Tower</span></a>
+            <div className="flex-1 flex">
+            <img className="w-10" src="/public/logo-casa.svg" alt="" />
+                <a className="btn hidden md:block
+                 btn-ghost text-lg md:text-xl">Gulshan <span className="text-info">Tower</span></a>
             </div>
             <div>
                 <div className="space-x-4 px-2 font-semibold">

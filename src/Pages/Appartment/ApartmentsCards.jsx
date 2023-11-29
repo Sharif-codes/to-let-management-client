@@ -1,8 +1,5 @@
 
-import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../hooks/useAuth";
-// import axiosSecure from "../../api";
-import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAdmin from "../../hooks/useAdmin";

@@ -1,20 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import useAuth from "../../../hooks/useAuth";
+
 import MemberStatTable from "./MemberStatTable";
 import useMemberRoom from "../../../hooks/useMemberRoom";
 
 const MemberStat = ({apartment}) => {
-    // const axiosSecure= useAxiosSecure()
-    // const {user}= useAuth()
-    // const email= user.email
-    // const {data}= useQuery({
-    //     queryKey: ["memberData"],
-    //     queryFn: async ()=>{
-    //        const res= await axiosSecure.get(`/memberData/${email}`)
-    //       return res.data
-    //     }
-    // })
     const data= useMemberRoom()
 
     return (

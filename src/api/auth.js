@@ -8,6 +8,6 @@ export const saveUser= async (user,name) =>{
         role: 'user',
         
     }
-    const {data}= await axios.post(`http://localhost:5000/users/${user.email}`, currentUser)
+    const {data}= await axios.post(`https://building-management-server-chi.vercel.app/users/${user.email}`, currentUser)
     return data;
 } 

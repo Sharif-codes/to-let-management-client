@@ -1,4 +1,4 @@
-import Swal from "sweetalert2";
+
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 

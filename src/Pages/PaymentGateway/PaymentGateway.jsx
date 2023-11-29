@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+
 import { useLocation } from "react-router-dom";
 import useAvailableCoupon from "../../hooks/useAvailableCoupon";
 import CheckoutForm from "../../component/CheckoutForm/CheckoutForm";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import { useState } from "react";
 
 
 

@@ -1,10 +1,8 @@
-import { CardCvcElement, CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-
-
 
 const CheckoutForm = ({price,month}) => {
   const {user}= useAuth()

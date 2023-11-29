@@ -8,7 +8,7 @@ import img3 from '../../assets/banner/apart-1.jpg'
 const Banner = () => {
     return (
        
-        <Carousel autoPlay>
+        <Carousel autoPlay className='overflow-hidden '>
             <div>
                 <img src={img1} />
              

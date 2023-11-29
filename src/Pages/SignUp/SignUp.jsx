@@ -11,7 +11,7 @@ import { ImSpinner3 } from 'react-icons/im'
 const SignUp = () => {
 
   const navigate = useNavigate()
-  const { createUser, updateUserProfile, signInWithGoogle, loading,user } = useAuth()
+  const { createUser, updateUserProfile, signInWithGoogle, loading } = useAuth()
   const location= useLocation()
   const from= location?.state?.from?.pathname || "/";
 

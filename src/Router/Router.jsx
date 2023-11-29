@@ -19,6 +19,7 @@ import PaymentGateway from "../Pages/PaymentGateway/PaymentGateway";
 import CouponManagement from "../Pages/Dashboard/CouponManagement/CouponManagement";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import AdminAnouncement from "../Pages/Dashboard/AdminAnouncement/AdminAnouncement";
 
 export const router= createBrowserRouter([
     {
@@ -53,7 +54,7 @@ export const router= createBrowserRouter([
                 element: <UserProfile></UserProfile>
             },
             {
-                path: "anouncement",
+                path: "anouncements",
                 element:<Anouncement></Anouncement>
             },
             // admin routes
@@ -75,6 +76,10 @@ export const router= createBrowserRouter([
                 path:"manageCoupon",
                 element: <AdminRoute><CouponManagement></CouponManagement></AdminRoute>
             },
+            {
+                path: "makeAnouncement",
+                element: <AdminRoute><AdminAnouncement></AdminAnouncement></AdminRoute>
+            },
             //member route
             {
                 path: "memberProfile",
@@ -91,7 +96,11 @@ export const router= createBrowserRouter([
             {
                 path: "paymentHistory",
                 element: <MemberRoute><PaymentHistory></PaymentHistory></MemberRoute>
-            }
+            },
+            // {
+            //     path: "anouncements",
+            //     element: <MemberRoute><Anouncement></Anouncement></MemberRoute>
+            // }
         ]
     }
 ])
