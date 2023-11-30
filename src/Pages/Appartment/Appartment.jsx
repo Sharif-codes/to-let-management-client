@@ -40,7 +40,7 @@ const Appartment = () => {
     }
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-2 lg:gap-5 lg:grid-cols-2 xl:grid-cols-3 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 lg:gap-5 lg:grid-cols-2 xl:grid-cols-3 mx-auto">
         {result?.map((item) => (
           <ApartmentsCards
             key={item._id}

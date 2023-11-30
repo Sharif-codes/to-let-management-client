@@ -43,7 +43,7 @@ const PaymentGateway = () => {
   const stripepromise = loadStripe(import.meta.env.VITE_payment_key)
   return (
     <div className=" space-y-3 ">
-      <div className="w-fit border-2 p-4 space-y-3 rounded-lg mx-auto mt-10">
+      <div className="w-fit border-2 p-2 md:p-4 space-y-3 rounded-lg mx-auto mt-10">
         <p>Net Rent: {data?.rent}</p>
         <div className="flex gap-2 ">
           <input onChange={handleCouponValidate} type="text" placeholder="Enter coupon code" className="border-primary rounded-lg outline-none border-2 px-2" />
@@ -56,8 +56,6 @@ const PaymentGateway = () => {
           </Elements>
         </div>
       </div>
-
-
     </div>
   );
 };

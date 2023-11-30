@@ -38,7 +38,6 @@ const CouponManagement = () => {
         <div>
             <div className="mb-5">
                 <CouponModal refetch={refetch}></CouponModal>
-
             </div>
             <div className="overflow-x-auto">
                 <table className="table">

@@ -12,7 +12,7 @@ const AdminStats = () => {
     const totalUser= data?.user
     const totalMember= data?.member
     return (
-        <div className="stats shadow">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 ">
 
             <div className="stat">
                 <div className="stat-figure text-primary mt-2">

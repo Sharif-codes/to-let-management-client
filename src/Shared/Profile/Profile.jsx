@@ -4,8 +4,8 @@ import useAuth from "../../hooks/useAuth";
 const Profile = () => {
     const { user } = useAuth()
     return (
-        <div className='flex gap-5 m-10'>
-            <div className='space-y-5 avatar online w-36'>
+        <div className='flex flex-col md:flex-row gap-5 m-10'>
+            <div className='space-y-5 avatar w-36'>
                 <img className='rounded-full' src={user.photoURL} alt="" />
                 {/* <button className='btn btn-primary' disabled>Update rofile</button> */}
             </div>

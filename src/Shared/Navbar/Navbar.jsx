@@ -8,10 +8,10 @@ const Navbar = () => {
     return (
         <div className="navbar w-full bg-info bg-opacity-20 max-w-screen-xl">
 
-            <div className="flex-1 flex">
-            <img className="w-10" src="/public/logo-casa.svg" alt="" />
-                <a className="btn hidden md:block
-                 btn-ghost text-lg md:text-xl">Gulshan <span className="text-info">Tower</span></a>
+            <div className="flex-1 flex items-center">
+                <img className="w-10" src="logo-casa.svg" alt="" />
+                <p className="ml-2 hidden md:block
+                 text-lg md:text-xl font-semibold">Gulshan <span className="text-info">Tower</span></p>
             </div>
             <div>
                 <div className="space-x-4 px-2 font-semibold">
@@ -43,10 +43,10 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                             <li className="font-lg ml-3 text-info justify-center">
-                           {user.displayName}
+                                {user.displayName}
                             </li>
                             <hr />
-                            
+
                             <Link to="/dashboard"><li><a>Dashboard</a></li></Link>
                             <li onClick={logOut}><a>Logout</a></li>
                         </ul>
