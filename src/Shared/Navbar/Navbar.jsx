@@ -9,9 +9,9 @@ const Navbar = () => {
         <div className="navbar w-full bg-info bg-opacity-20 max-w-screen-xl">
 
             <div className="flex-1 flex items-center">
-                <img className="w-10" src="logo-casa.svg" alt="" />
+                <img className="w-10" src="/logo-casa.svg" alt="" />
                 <p className="ml-2 hidden md:block
-                 text-lg md:text-xl font-semibold">Gulshan <span className="text-info">Tower</span></p>
+                 text-lg md:text-xl font-semibold">To-let<span className="text-info">Vista</span></p>
             </div>
             <div>
                 <div className="space-x-4 px-2 font-semibold">

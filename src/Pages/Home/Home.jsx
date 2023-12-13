@@ -4,6 +4,7 @@ import Coupons from "../../component/Coupons/Coupons";
 import Banner from "../../component/banner/Banner";
 import Location from "./Location";
 import useAvailableCoupon from "../../hooks/useAvailableCoupon";
+import Map from "../../component/Map/Map";
 
 const Home = () => {
     const data = useAvailableCoupon()
@@ -28,8 +29,13 @@ const Home = () => {
                 </div>
             </section>
 
-            <Location></Location>
+            {/* <Location></Location> */}
+            <Section title="Building Location"></Section>
 
+            <div className="flex justify-center mb-10">
+              
+                <Map></Map>
+            </div>
 
             <Footer></Footer>
         </div>

@@ -14,17 +14,27 @@ const AgreementRequestTable = ({ agreementReq, serial, refetch }) => {
     const year = date.getFullYear().toString().slice(-2);
     const formattedDate = `${day}/${month}/${year}`;
     console.log(formattedDate);
+
     const handleAcceptAgreement = async (si, email) => {
-        const res = await axiosSecure.put(`/acceptAgreement`, { si, email })
+        const res = await axiosSecure.put('/acceptAgreement', { si, email })
         console.log(res?.data)
-        toast.success('Request accepted!')
-        refetch()
+        if(res.data.modifiedCount>0)
+        {
+
+            toast.success('Request accepted!')
+            refetch()
+        }
+       
     }
     const handleRejectAgreement = async (si) => {
         const res = await axiosSecure.patch(`/rejectAgreement/${si}`)
         console.log(res?.data);
-        toast.success("Request cancelled successfully!")
-        refetch()
+        if(res.data.modifiedCount>0)
+        {
+
+            toast.success('Request rejected!')
+            refetch()
+        }
     }
     return (
         <tr>

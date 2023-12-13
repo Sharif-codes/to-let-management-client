@@ -22,6 +22,7 @@ const Dashboard = () => {
     const [sidebarVisibility, setSidebarVisibility] = useState(true)
     console.log("is Admin:", isAdmin);
     console.log("is member", isMember);
+    console.log("is user  :", isUser);
     if (isAdminLoading || isMemberLoading || isUserLoading) {
         return <Spinner></Spinner>
     }
@@ -48,7 +49,7 @@ const Dashboard = () => {
                 <div className="flex-1 flex items-center">
                 <img className="w-10" src="logo-casa.svg" alt="" />
                 <p className="ml-2 hidden md:block
-                 text-lg md:text-xl font-semibold">Gulshan <span className="text-info">Tower</span></p>
+                 text-lg md:text-xl font-semibold">To-Let <span className="text-info">Vista</span></p>
             </div>
                 <div className="flex gap-3">
                 
